@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/fav.png">
     <title>Моя родословная</title>
-    
+
 </head>
 <body>
     <div class="wrapper">
@@ -22,7 +23,7 @@
                 <nav class="menu__body">
                     <ul class="menu__list">
                         <li>
-                            <a data-goto=".lng-abouttitle" href="#" class="menu__link lng-aboutlink">О родословной</a>
+                            <a data-goto=".lng-whatistitle" href="#" class="menu__link lng-aboutlink">О родословной</a>
                         </li>
                         <li>
                             <a data-goto=".lng-treetitle" href="#" class="menu__link lng-treelink">Древо</a>
@@ -38,7 +39,37 @@
             </div>
         </header>
         <main class="main">
-            
+            <!-- what is this block -->
+            <div class="block"> 
+                <div class="block__title lng-whatistitle"></div>
+                <div class="block__line"></div>
+                <div class="block__container">
+                    <div class="block__text lng-whatistext"></div>
+                    <div class="block__img"><img data-src="img/whatis.png" src="16x16" title="Дедушка и внук"></div>
+                </div>
+            </div>
+            <!-- for what black -->
+            <div class="block">
+                <div class="block__title lng-forwhattitle"></div>
+                <div class="block__line"></div>
+                <div class="block__text lng-forwhattext"></div>
+            </div>
+            <!-- family tree block -->
+            <div class="block">
+                <div class="block__title lng-treetitle"></div>
+                <div class="block__line"></div>
+                <div class="block__tree tree">
+                    <div class="tree__body">
+                        <div class="tree__item-container">
+                            <a href="#"><div class="tree__item me-item">Папа</div></a>
+                            <div class="tree__item-line me-line"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="obj__wrap">
+                <div class="obj"></div>
+            </div>
         </main>
         <footer class="footer">
             

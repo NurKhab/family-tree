@@ -1,7 +1,5 @@
 /* fonts */
-@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans&family=Jost&display=swap');
 
 /* body */
 
@@ -39,24 +37,6 @@ a {
     color: #203C9F;
     font-weight: 500;
     transition: all 0.3s ease 0s;
-
-    &::after {
-        content: " →";
-        opacity: 0;
-        visibility: hidden;
-        margin-left: -10px;
-        transition: all 0.3s ease 0s;
-    }
-
-    &:hover {
-        color: #11256c;
-        &::after {
-            content: " →";
-            opacity: 1;
-            visibility: visible;
-            margin-left: 0px;
-        }
-    }
 }
 
 ol, ul, li {
@@ -72,7 +52,8 @@ ol, ul, li {
 	z-index: 10;
     text-align: center;
     font-size: 70px;
-	opacity: 0.8;
+    color: #000;
+	opacity: 0.7;
 
     &.hide {
         display: none;
@@ -87,6 +68,7 @@ ol, ul, li {
     grid-area: header;
     display: grid;
     grid-template: 1fr / 1fr 1fr 1fr;
+    min-width: 100%;
     background-color: #FFCCCC;
     align-items: center;
     justify-items: center;
@@ -114,10 +96,30 @@ ol, ul, li {
 }
 
 .menu {
+    a {
+        &::after {
+            content: " →";
+            opacity: 0;
+            visibility: hidden;
+            margin-left: -10px;
+            transition: all 0.3s ease 0s;
+        }
+    
+        &:hover {
+            color: #11256c;
+            &::after {
+                content: " →";
+                opacity: 1;
+                visibility: visible;
+                margin-left: 0px;
+            }
+        }
+    }
+    li {
+        position: relative;
+    }
     &__body {
         user-select: none;
-    }
-    &__list {
     }
     &__link {
         font-size: 25px;
@@ -140,6 +142,89 @@ ol, ul, li {
     }
 }
 
+.block {
+    font-family: 'Alegreya Sans', sans-serif;
+    margin: 25px 25px auto 25px;
+    background-color: #FEFFDC;
+    border: 3px solid #969768;
+    border-radius: 15px;
+    box-shadow: 10px 10px 0px #9697685f;
+
+    ul {
+        margin: 10px auto;
+    }
+    li {
+        list-style: outside;
+    }
+    &__title {
+        font-size: 45px;
+        letter-spacing: 2px;
+        color: #6A043B;
+        padding-left: 25px;
+        padding-top: 10px; 
+        font-weight: 600;   
+    }
+    &__line {
+        border-bottom: 4px solid #6A043B;
+        width: 45%;
+        margin-left: 25px;
+    }
+    &__container {
+        display: grid;
+        width: 100%;
+        grid-template: 1fr / 75% 25%;
+    }
+    &__img {
+        width: 75%;
+        align-self: center;
+        justify-self: center;
+        user-select: none;
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            box-shadow: 5px 5px 10px rgba(145, 38, 38, 0.5);
+        }
+    }
+    &__text {
+        padding: 25px;
+        padding-left: 50px;
+        font-size: 30px;
+    }
+}
+
+.tree {
+    &__body {
+        width: 100%;
+        height: 100%;
+        padding: 25px;
+        margin: 25px;
+        background-color: #fff;
+
+    }
+    &__item {
+        margin: auto;
+        user-select: none;
+        width: 100%;
+        height: 100%;
+
+        &-container {
+            margin: auto;
+            background-color: #8FB3E9;
+            text-align: center;
+            font-size: 25px;
+            width: 5%;
+        }
+        &-line {
+            border-bottom: 5px solid rgba(0, 0, 0, .7);
+            width: 100%;
+            margin-left: -100%;
+            margin-bottom: 50%;
+        }
+    }
+}
+
 @media (min-width: 992px) {
     .menu {
         &__list {
@@ -147,6 +232,18 @@ ol, ul, li {
             grid-template: 1fr / minmax(0px, auto) minmax(0px, auto) minmax(0px, auto);
             align-items: center;
             justify-items: center;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .block {
+        &__container {
+            height: 100%;
+            grid-template: 1fr / 1fr;
+        }
+        &__img {
+            width: 50%;
         }
     }
 }

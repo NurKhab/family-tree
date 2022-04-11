@@ -17,6 +17,18 @@ $(function () {
 	});
 });
 
+//! Меню-бургер
+
+const burgerMenu = document.querySelector('.menu__burger'); //* Поиск кнопки меню в коде и определение его в переменную
+const menuBody = document.querySelector('.menu__body'); //* Поиск меню в коде и определение его в переменную
+if (burgerMenu) { //* Если кнопка обнаружена, то
+	burgerMenu.addEventListener("click", function (e) { //* При клике ана кнопку происходит следующие действия
+		document.body.classList.toggle('lock'); //* Блокируется возможность взаимодействовать с основной страницей
+		burgerMenu.classList.toggle('active'); //* Активируется и меняется кнопка меню-бургера
+		menuBody.classList.toggle('active'); //* Открывается меню
+	});
+}
+    
 //! Перейти по ссылке
 
 const menuLinks = document.querySelectorAll('.menu__link[data-goto]'); 
@@ -162,9 +174,37 @@ const langArr = {
         "ru": "О родословной",
         "tat": "Шәҗәрә турында",
     },
+    "whatislink" : {
+        "ru": "Что это?",
+        "tat": "Нәрсә ул?",
+    },
+    "forwhatlink" : {
+        "ru": "Зачем нужна?",
+        "tat": "Нәрсәгә кирәк?",
+    },
     "treelink" : {
         "ru": "Древо",
         "tat": "Агач",
+    },
+    "whatistitle" : {
+        "ru": "<i class='fa-solid fa-circle-question'></i> Что такое родословная?",
+        "tat": "<i class='fa-solid fa-circle-question'></i> Нәрсә ул шәҗәрә?",
+    },
+    "forwhattitle" : {
+        "ru": "<i class='fa-solid fa-circle-question'></i> Зачем нужна родословная?",
+        "tat": "<i class='fa-solid fa-circle-question'></i> Нәрсәгә кирәк шәҗәрә?",
+    },
+    "treetitle" : {
+        "ru": "<i class='fa-solid fa-tree'></i> Генеалогическое древо",
+        "tat": "<i class='fa-solid fa-tree'></i> агачы",
+    },
+    "whatistext" : {
+        "ru": "&#10148;&nbsp;&nbsp;&nbsp;<strong>Родословная</strong> - это перечень поколений одного рода, устанавливающий происхождение и степень родства.<br>&#10148;&nbsp;&nbsp;&nbsp;Но это лишь общепринятое определение данного слова. В жизни человека значение генеалогии гораздо выше, ведь родословное древо позволяет нам почувствовать себя частью потока сменяющих друг друга поколений. Поэтому можно сказать, что родословная - это «семейная память», в которую входят описание рода и фрагменты истории этноса и страны.",
+        "tat": "&#10148;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate, similique?",
+    },
+    "forwhattext" : {
+        "ru": "&#10148;&nbsp;&nbsp;&nbsp;Сегодня изучение происхождения своей фамилии и рода стало особенно популярным. Можно составить список причин, по которой люди интересуются своей родословной: <ul><li>узнать происхождение фамилии и историю семьи</li><li>узнать информацию о своих предках</li><li>узнать о дальних родственниках</li><li>доказать факт родства с кем-либо</li><li>узнать возможную предрасположенность к болезни</li><li><i>и так далее.</i></li></ul>",
+        "tat": "&#10148;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate, similique?",
     },
 };
 
@@ -198,3 +238,79 @@ function changeLanguage() { //* Изменение языка
     }
 }
 changeLanguage(); //* Фукнция запускается
+
+//! Ленивая загрузка
+
+const lazyImages = document.querySelectorAll('img[data-src], source[data-srcset]');
+const windowHeight = document.documentElement.clientHeight;
+const loadMoreBlock = document.querySelector('load-more');
+
+let lazyImgsPos = [];
+if (lazyImages.length > 0) {
+    lazyImages.forEach(img => {
+        if (img.dataset.src || img.dataset.srcset) {
+            lazyImgsPos.push(img.getBoundingClientRect().top + pageYOffset);
+            lazyScrollCheck();
+        }
+    });
+}
+
+window.addEventListener("scroll", lazyScroll);
+
+function lazyScroll() {
+    if (document.querySelectorAll('img[data-src], source[data-srcset]').length > 0) {
+        lazyScrollCheck();
+    }
+    if (!loadMoreBlock.classList.contains('_loading')) {
+        loadMore();
+    }
+}
+
+function lazyScrollCheck() {
+    let imgIndex = lazyImgsPos.findIndex(
+        item => pageYOffset > item - windowHeight
+    );
+    if (imgIndex >= 0) {
+        if (lazyImages[imgIndex].dataset.src) {
+            lazyImages[imgIndex].src = lazyImages[imgIndex].dataset.src;
+            lazyImages[imgIndex].removeAttribute('data-src');
+        } else if (lazyImages[imgIndex].dataset.srcset) {
+            lazyImages[imgIndex].srcset = lazyImages[imgIndex].dataset.srcset;
+            lazyImages[imgIndex].removeAttribute('data-srcset');
+        }
+        delete lazyImgsPos[imgIndex];
+    }
+}
+
+function loadMore() {
+    const loadMoreBlockPos =  loadMoreBlock.getBoundingClientRect().top + pageYOffset;
+    const loadMoreBlockHeight = loadMoreBlock.offsetHeight;
+
+    if (pageYOffset > (loadMoreBlockPos + loadMoreBlockHeight) - windowHeight) {
+        getContent();
+    }
+}
+
+async function getContent() {
+    if (!document.querySelector('_loading-icon')) {
+       loadMoreBlock.insertAdjacentHTML(
+           'beforeend',
+            `<div class="_loading-icon"></div>`
+       );
+       loadMoreBlock.classList.add('_loading');
+
+       let response = await fetch('_more.html', {
+           method: 'GET',
+       });
+       if (response.ok) {
+           let result = await response.text();
+           loadMoreBlock.insertAdjacentHTML('beforeend', result);
+           loadMoreBlock.classList.remove('_loading');
+           if (document.querySelector('._loading-icon')) {
+               document.querySelector('._loading-icon').remove();
+           }
+       } else { 
+           alert("Ошибка");
+       }
+    }
+}
