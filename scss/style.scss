@@ -23,11 +23,11 @@ body {
 }
 
 .wrapper {
-    font-family: 'Jost', sans-serif;
+    font-family: 'Verdana', sans-serif;
     display: grid;
     grid-template: minmax(100px, auto) 1fr minmax(70px, auto) / 1fr;
     grid-template-areas:
-        "header"
+        "header"    
         "main"
         "footer";
 }
@@ -65,6 +65,7 @@ ol, ul, li {
 }
 
 .header {
+    position: fixed;
     z-index: 10;
     grid-area: header;
     display: grid;
@@ -72,7 +73,11 @@ ol, ul, li {
     min-width: 100%;
     background-color: #FFCCCC;
     align-items: center;
-    justify-items: center;  
+    justify-items: center;
+    top: 0;
+    left: 0;
+    box-shadow: 7px 7px 20px #a37676;
+    border-radius: 0 0 30px 30px;
 
     &__logo {
         justify-self: start;
@@ -132,15 +137,20 @@ ol, ul, li {
         text-align: center;
         cursor: pointer;
         padding: 10px 15px;
-        border-radius: 10px;
+        border-radius: 25px;
         font-size: 20px;
         background-color: #a00056;
-        border: 3px solid #810045;
-        transition: all 0.3s ease 0s;
+        border: 4px solid #680239;
+        box-shadow: 4px 4px 0 #680239;
+        transition: all 0.5s ease 0s;
         &:hover {
-            box-shadow: 5px 5px 0 #810045;
+            box-shadow: none;
         }
     }
+}
+
+.main {
+    margin-top: 200px;
 }
 
 .block {

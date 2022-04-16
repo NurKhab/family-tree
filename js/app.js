@@ -41,7 +41,7 @@ if (menuLinks.length > 0) {
 		const menuLink = e.target;
 		if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
 			const gotoBlock = document.querySelector(menuLink.dataset.goto);	
-			const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - document.querySelector('.menu').offsetHeight;
+			const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - document.querySelector('.header').offsetHeight;
 
 			if (burgerMenu.classList.contains('active')) {
 				document.body.classList.remove('lock');
@@ -200,7 +200,7 @@ const langArr = {
     },
     "whatistext" : {
         "ru": "&#10148;&nbsp;&nbsp;&nbsp;<strong>Родословная</strong> - это перечень поколений одного рода, устанавливающий происхождение и степень родства.<br>&#10148;&nbsp;&nbsp;&nbsp;Но это лишь общепринятое определение данного слова. В жизни человека значение генеалогии гораздо выше, ведь родословное древо позволяет нам почувствовать себя частью потока сменяющих друг друга поколений. Поэтому можно сказать, что родословная - это «семейная память», в которую входят описание рода и фрагменты истории этноса и страны.",
-        "tat": "&#10148;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate, similique?",
+        "tat": "&#10148;&nbsp;&nbsp;&nbsp;<strong>Шәҗәрә ул</strong> - нәселнең барлыкка килүен һәм туганлык дәрәҗәсен билгеләүче буыннар исемлеге.<br>&#10148;&nbsp;&nbsp;&nbsp;Әмма бу әлеге сүзнең гөмүме кабул ителгән билгеләмәсе генә. Кешенең гомерендә генеалогияның әһәмияте бик югары, чөнки генеалогик агачы безгә үзебезне буыннар алышына торган агымның бер өлеше дип сизәргә рөхсәт итә. Шуңа күрә шәҗәрә ул - нәсел тасвирлавы һәм халыкның, илнең тарихының булекләре керә торган 'гаиләнең истәлеге'.",
     },
     "forwhattext" : {
         "ru": "&#10148;&nbsp;&nbsp;&nbsp;Сегодня изучение происхождения своей фамилии и рода стало особенно популярным. Можно составить список причин, по которой люди интересуются своей родословной: <ul><li>узнать происхождение фамилии и историю семьи</li><li>узнать информацию о своих предках</li><li>узнать о дальних родственниках</li><li>доказать факт родства с кем-либо</li><li>узнать возможную предрасположенность к болезни</li><li><i>и так далее.</i></li></ul>",
