@@ -14,7 +14,7 @@
     <div class="wrapper">
         <a href="#" id="scroll-top" class="lng-scrollbutton"></a>
         <header class="header">
-            <div class="header__logo"><a href="https://nurkhab.github.io/family-tree"><img src="img/family.png" title=""></a></div>
+            <div class="header__logo"><a href="https://nurkhab.github.io/family-tree" target="blank"><img src="img/family.png" title=""></a></div>
             <div class="header__title lng-maintitle">Моя родословная</div>
             <div class="header__menu menu">
                 <div class="menu__burger">
@@ -58,13 +58,52 @@
             <div class="block">
                 <div class="block__title lng-treetitle"></div>
                 <div class="block__line"></div>
+                <div class="block__poem">
+                  <div class="block__poem-title">&#171;Мин табышмак чишәм&#187;</div>
+                  <span id="more">
+                      Яралганмын кара туфрагымнан, 
+                      <br>Идел-судан, халык җырларыннан, 
+                      <br>Ак яулыклы татар карчыгының 
+                      <br>Яргаланып беткән кулларыннан.<br>
+                      <br>Яралганмын әнкәм көлтә итеп
+                      <br>Бәйләр өчен җыйган учмалардан, 
+                      <br>Көлтәләрдән учма булып кына 
+                      <br>Безгә килеп җиткән кыйссалардан.<br>
+                      <br>Яралганмын җил-давыллар узып 
+                      <br>Исән калган агач башларыннан, 
+                      <br>Диварларга нигез булып яткан 
+                      <br>Истәлекле кабер ташларыннан.<br>
+                      <br>Яралганмын халык иҗат иткән 
+                      <br>Табышмактан, әйе, табышмактан... 
+                      <br>Әткәм хыялланып эзләп йөргән, 
+                      <br>Җавап итеп, әнкәм мине тапкан.<br>
+                      <br>Тапкан, табышмакка җавап итеп, –
+                      <br>Шулай тапкан әткәм эзләгәнен... 
+                      <br>Тик барыбер бер табышмак булып 
+                      <br>Калган минем һәрбер күзәнәгем.<br>
+                      <br>«Үзе атлап йөрсен, дөнья күрсен» –
+                      <br>Еллар минем аяк-кулны чишкән; 
+                      <br>«Тапкырлыкның татлы тәмен белсен» 
+                      <br>Туган халкым сөйләр телне чишкән.<br>
+                      <br>...Яралганмын кара туфрагымнан, 
+                      <br>Идел-судан, халык җырларыннан, 
+                      <br>Хәзер инде дөнья, чишәр өчен, 
+                      <br>Үз алдыма табышмаклар куйган.<br>
+                      <br>Мин дә җавап эзлим әткәм кебек, 
+                      <br>Мин табышмак чишәм нәселемә. 
+                      <br>Аяк-кулын вакыт чишәр аның, 
+                      <br>Сөйләр телен кемнәр чишәр менә...<br>
+                      <br>...Мин табышмак чишәм нәселемә.
+                      <div class="block__poem-subscr"><i>Мөдәррис Әгъләм</i></div>
+                  </span>
+                  <button id="more-button" class="lng-readmore" onclick="readMore()">Читать</button>
+                </div>
                 <div class="block__title-text">Древо Хабибуллиных</div>
                 <div class="block__tree tree">
                     <ul class="tree__body">
                       <div class="grgrgrparents__container">
                         <li>
                           <div class="grgrgrpa">
-                            <div class=""></div>
                             <a href="#popup__grgrgrpa" class="popup-link"><div class="grgrgrpa__block"><div class="grgrgrpa__textblock text__block"><div class="grgrgrpa__text text lng-grgrgrpa">Прапрадедушка</div></div></div></a>
                             <div class="grgrgrpa__right-branch right-branch"></div>
                           </div>
@@ -73,7 +112,6 @@
                           <div class="grgrgrma">
                             <div class="grgrgrma__left-branch left-branch"></div>
                             <a href="#popup__grgrgrma" class="popup-link"><div class="grgrgrma__block"><div class="grgrgrma__textblock text__block"><div class="grgrgrma__text text lng-grgrgrma">Прапрабабушка</div></div></div></a>
-                            <div class=""></div>
                           </div>
                         </li>
                       </div>
@@ -132,7 +170,7 @@
                             <div class="sister">
                               <a href="#popup__sister" class="popup-link"><div class="sister__block"><div class="sister__textblock text__block"><div class="sister__text text">Сестра</div></div></div></a>
                             </div>
-                          </li>
+                          </li> 
                         </div>
                         <li>
                           <div class="me">
@@ -147,8 +185,7 @@
                     <div class="grgrgrparents__container">
                       <li>
                         <div class="grgrgrpa">
-                          <div class=""></div>
-                          <a href="#popup__grgrgrpa" class="popup-link"><div class="grgrgrpa__block"><div class="grgrgrpa__textblock text__block"><div class="grgrgrpa__text text lng-grgrgrpa">Прапрадедушка</div></div></div></a>
+                          <a href="#popup__grgrgrpa-1" class="popup-link"><div class="grgrgrpa__block"><div class="grgrgrpa__textblock text__block"><div class="grgrgrpa__text text lng-grgrgrpa">Прапрадедушка</div></div></div></a>
                           <div class="grgrgrpa__right-branch right-branch"></div>
                         </div>
                       </li>
@@ -156,7 +193,6 @@
                         <div class="grgrgrma">
                           <div class="grgrgrma__left-branch left-branch"></div>
                           <a href="#popup__grgrgrma" class="popup-link"><div class="grgrgrma__block"><div class="grgrgrma__textblock text__block"><div class="grgrgrma__text text lng-grgrgrma">Прапрабабушка</div></div></div></a>
-                          <div class=""></div>
                         </div>
                       </li>
                     </div>
@@ -167,7 +203,7 @@
                               <div class="grgrpa__top-branch top-branch"></div>
                               <div class=""></div>
                               <div class="grgrpa__left-branch left-branch"></div>
-                              <a href="#popup__grgrpa" class="popup-link"><div class="grgrpa__block"><div class="grgrpa__textblock text__block"><div class="grgrpa__text text lng-grgrpa">Прадедушка</div></div></div></a>
+                              <a href="#popup__grgrpa-1" class="popup-link"><div class="grgrpa__block"><div class="grgrpa__textblock text__block"><div class="grgrpa__text text lng-grgrpa-1">Прадедушка</div></div></div></a>
                               <div class="grgrpa__right-branch right-branch"></div>
                             </div>
                           </li>
@@ -183,29 +219,79 @@
                           </li>
                       </div>
                       <li>
-                        <div class="grpa">
+                        <div class="grma">
                           <div class=""></div>
-                          <div class="grpa__top-branch top-branch"></div>
+                          <div class="grma__top-branch top-branch"></div>
                           <div class=""></div>
-                          <div class="grpa__left-branch left-branch"></div>
-                          <a href="#popup__grpa" class="popup-link"><div class="grpa__block"><div class="grpa__textblock text__block"><div class="grpa__text text">Дедушка</div></div></div></a>
-                          <div class="grpa__right-branch right-branch"></div>
+                          <div class="grma__left-branch left-branch"></div>
+                          <a href="#popup__grma" class="popup-link"><div class="grma__block"><div class="grma__textblock text__block"><div class="grma__text text">Бабушка</div></div></div></a>
+                          <div class="grma__right-branch right-branch"></div>
                         </div>
                       </li>
-                      <li>
-                        <div class="dad">
-                          <div class="dad__top-branch top-branch"></div>
-                          <a href="#popup__dad" class="popup-link"><div class="dad__block"><div class="dad__textblock text__block"><div class="dad__text text">Папа</div></div></div></a>
-                          <div class="dad__bottom-branch bottom-branch"></div>
-                        </div>
-                      </li>
+                      <div class="brother-dad-sister__container">
+                        <li>
+                          <div class="brother">
+                            <a href="#popup__brother" class="popup-link"><div class="brother__block"><div class="brother__textblock text__block"><div class="brother__text text">Брат</div></div></div></a>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="dad">
+                            <div class=""></div>
+                            <div class="dad__top-branch top-branch"></div>
+                            <div class=""></div>
+                            <div class="dad__left-branch left-branch"></div>
+                            <a href="#popup__dad" class="popup-link"><div class="dad__block"><div class="dad__textblock text__block"><div class="dad__text text">Папа</div></div></div></a>
+                            <div class="dad__right-branch right-branch"></div>
+                            <div class=""></div>
+                            <div class="dad__bottom-branch bottom-branch"></div>
+                            <div class=""></div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="sister">
+                            <a href="#popup__sister" class="popup-link"><div class="sister__block"><div class="sister__textblock text__block"><div class="sister__text text">Сестра</div></div></div></a>
+                          </div>
+                        </li> 
+                      </div>
                       <li>
                         <div class="me">
                           <a href="#popup__me" class="popup-link"><div class="me__block"><div class="me__textblock text__block"><div class="me__text text">Я</div></div></div></a>
                         </div>
                       </li>
                   </ul>
-              </div>
+                </div>
+                <div class="block__poem">
+                  <div class="block__poem-title">***</div>
+                  <div class="block__poem-subscr"><i>Мин табышмак чишәм нәселемә...<br>М. Әгъләм</i></div>
+                  <span id="more-1">
+                      Мин җавапсыз калмам. Шау имәннәр
+                      <br>Кочагында изри изге көннәр.
+                      <br>Кылганнарны тарый вакыт җиле,
+                      <br>Кемнәр килә җиргә, китә кемнәр?<br>
+                      <br>Мин җавабын эзлим бу гомернең. 
+                      <br>Мин азагын эзлим юлларымның. 
+                      <br>Чалгы чыңы сөйли болын өнен, 
+                      <br>Чал кылганнар көйли кырлар моңын...<br>
+                      <br>Яланаяк кына, сайлап кына 
+                      <br>Өзә барам зәңгәр чәчкәләрне. 
+                      <br>Арыш серкәләнә, көн уртасы, 
+                      <br>Тургай моңы чәчри чәрдәкләнеп.<br>
+                      <br>Адым саен, һәр сулышым саен 
+                      <br>Күк-Тәңредән миңа җавап иңә. 
+                      <br>Табаннарга камыл кадалса да, 
+                      <br>Тугарылып, бер чабасы килә.<br>
+                      <br>Мин җавапсыз калмам. Бәгыремдә 
+                      <br>Яңа мәңгелек җыр бөреләнә. 
+                      <br>Үткәннәрнең кайтавазын җыя, 
+                      <br>Чорлар чылбырына үрелә дә.<br>
+                      <br>Мең яшисе, мең яшисе килә, 
+                      <br>Сорау төеннәрен сүтәр өчен, 
+                      <br>Бабалары нигезендә оныгымны 
+                      <br>Чыр китереп мунча кертер өчен...<br>
+                      <div class="block__poem-subscr"><i>Лилия Гыйбадуллина</i></div>
+                  </span>
+                  <button id="more-button-1" class="lng-readmore" onclick="readMoreDouble()">Читать</button>
+                </div>
             </div>
         </main>
         <footer class="footer">
@@ -213,6 +299,7 @@
         </footer>
     </div>
 
+    <!-- ! popups -->
     <div class="popups">
       <div id="popup__me" class="popup">
         <div class="popup__body">
@@ -223,6 +310,32 @@
             <div class="popup__container">
               <div class="popup__text">&nbsp;&nbsp;&nbsp;Родился в Казани, 16 октября 2006 года.</div>
               <div class="popup__img"><img data-src="img/family/me.png" src="img/16x16.png" title="Хабибуллин Нурбек Искандерович"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="popup__brother" class="popup">
+        <div class="popup__body">
+          <div id="popup_c" class="popup__content">
+            <a href="#" class="popup__close close-popup"><i class="fas fa-times"></i></a>
+            <div class="popup__title">Хабибуллин Чингиз Искандерович</div>
+            <div class="popup__line"></div>
+            <div class="popup__container">
+              <div class="popup__text"><br>&nbsp;&nbsp;&nbsp;Мой единокровный брат.<br>&nbsp;&nbsp;&nbsp;Родился в Казани, 9 января 2016 года.</div>
+              <div class="popup__img"><img data-src="img/family/brother.png" src="img/16x16.png" title="Хабибуллин Чингиз Искандерович"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="popup__sister" class="popup">
+        <div class="popup__body">
+          <div id="popup_c" class="popup__content">
+            <a href="#" class="popup__close close-popup"><i class="fas fa-times"></i></a>
+            <div class="popup__title">Хабибуллина Мерида Искандеровна</div>
+            <div class="popup__line"></div>
+            <div class="popup__container">
+              <div class="popup__text"><br>&nbsp;&nbsp;&nbsp;Моя единокровная сестра.<br>&nbsp;&nbsp;&nbsp;Родилась в Казани, 30 сентября 2018 года.</div>
+              <div class="popup__img"><img data-src="img/family/sister.png" src="img/16x16.png" title="Хабибуллина Мерида Искандеровна"></div>
             </div>
           </div>
         </div>
@@ -248,7 +361,20 @@
             <div class="popup__line"></div>
             <div class="popup__container">
               <div class="popup__text"></div>
-              <div class="popup__img"><img data-src="img/family/grpa.png" src="img/16x16.png" title="Хабибуллин Рафис Мударрисович"></div>
+              <div class="popup__img"><img data-src="img/family/grpa.png" src="img/16x16.png" title="Хабибуллин Рафис Мударрисович (справа - я)"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="popup__grma" class="popup">
+        <div class="popup__body">
+          <div id="popup_c" class="popup__content">
+            <a href="#" class="popup__close close-popup"><i class="fas fa-times"></i></a>
+            <div class="popup__title">Хабибуллина (Закирова) Алия Нуховна</div>
+            <div class="popup__line"></div>
+            <div class="popup__container">
+              <div class="popup__text">&nbsp;&nbsp;&nbsp;Моя бабушка по папиной линии. Жила с 1959 по 1998 года, погибла из-за болезни, когда папе было всего 11 лет.<br>&nbsp;&nbsp;&nbsp;Читая девичью фамилию, можно понять, что она объединила род Закировых и Хабибуллиных.</div>
+              <div class="popup__img"><img data-src="img/family/grma.png" src="img/16x16.png" title="Семейное фото дедушки, бабушки и маленького папы"></div>
             </div>
           </div>
         </div>
@@ -266,16 +392,36 @@
           </div>
         </div>
       </div>
+      <div id="popup__grgrpa-1" class="popup">
+        <div class="popup__body">
+          <div id="popup_c" class="popup__content">
+            <a href="#" class="popup__close close-popup"><i class="fas fa-times"></i></a>
+            <div class="popup__title">Закиров Нух Закирович</div>
+            <div class="popup__line"></div>
+            <div class="popup__container">
+              <div class="popup__text">&nbsp;&nbsp;&nbsp;Родился в 1924 г., в с. Пшалым Арского р-на ТАССР (РТ). Был призван в армию во время войны в качестве рядового.<br>&nbsp;&nbsp;&nbsp;Умер в результате аварии, 1952 году (в возрасте 39 лет).</div>
+              <div class="popup__img"><img data-src="img/family/grgrpa-1.png" src="img/16x16.png" title="Слева - прадед Закиров Нух Закирович, справа - его брат Закир"></div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div id="popup__grgrma" class="popup">
         <div class="popup__body">
           <div id="popup_c" class="popup__content">
             <a href="#" class="popup__close close-popup"><i class="fas fa-times"></i></a>
-            <div class="popup__title">Зульхия Вафовна</div>
+            <div class="popup__title">Хабибуллина Зульхия Вафовна</div>
             <div class="popup__line"></div>
-            <div class="popup__container">
-              <div class="popup__text"></div>
-              <div class="popup__img"><img data-src="img/family/grgrma.png" src="img/16x16.png" title="Зульхия"></div>
-            </div>
+            <div class="popup__text"></div>
+          </div>
+        </div>
+      </div>
+      <div id="popup__grgrgrpa" class="popup">
+        <div class="popup__body">
+          <div id="popup_c" class="popup__content">
+            <a href="#" class="popup__close close-popup"><i class="fas fa-times"></i></a>
+            <div class="popup__title">Абдуллин Хабибулла Насибуллович</div>
+            <div class="popup__line"></div>
+            <div class="popup__text"><br>&nbsp;&nbsp;&nbsp;Годы жизни: 1900-1941.<br>&nbsp;&nbsp;&nbsp;Участник Великой Отечественной войны, служил рядовым на фронте. Погиб 30 декабря 1941 года.</div>
           </div>
         </div>
       </div>
