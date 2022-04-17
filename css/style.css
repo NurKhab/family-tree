@@ -1042,6 +1042,106 @@ ol, ul, li {
 }
 
 @media (max-width: 992px) {
+  .header__title {
+    font-size: 37px;
+  }
+  .header__logo img {
+    max-width: 75px;
+  }
+  .menu__body {
+    position: fixed;
+    top: -100%;
+    right: -100%;
+    min-width: 50%;
+    min-height: 50%;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 100px 30px 30px 30px;
+    border-bottom-left-radius: 50px;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    overflow: auto;
+  }
+  .menu__body.active {
+    top: 0;
+    right: 0;
+  }
+  .menu__list {
+    text-align: center;
+    -ms-grid-rows: 1fr;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template: 1fr / 1fr 1fr 1fr 1fr;
+  }
+  .menu__list > li {
+    margin: 0px 0px 30px 0px;
+  }
+  .menu__list > li:last-child {
+    margin-bottom: 0;
+  }
+  .menu__link {
+    font-size: 35px;
+    color: #fff;
+  }
+  .menu__link:hover {
+    font-size: 35px;
+  }
+  .menu__change-lang {
+    padding: 5px 20px;
+    font-size: 30px;
+  }
+  .menu__burger {
+    z-index: 101;
+    display: block;
+    position: relative;
+    width: 45px;
+    height: 36px;
+    margin-left: auto;
+    top: 25%;
+    right: 3%;
+    cursor: pointer;
+  }
+  .menu__burger.active span {
+    -webkit-transform: scale(0) translate(0px, -50%);
+            transform: scale(0) translate(0px, -50%);
+  }
+  .menu__burger.active span, .menu__burger.active::before, .menu__burger.active::after {
+    background-color: #fff;
+  }
+  .menu__burger.active::before {
+    top: 50%;
+    -webkit-transform: rotate(-45deg) translate(0px, -50%);
+            transform: rotate(-45deg) translate(0px, -50%);
+  }
+  .menu__burger.active::after {
+    bottom: 50%;
+    -webkit-transform: rotate(45deg) translate(0px, 50%);
+            transform: rotate(45deg) translate(0px, 50%);
+  }
+  .menu__burger span, .menu__burger::before, .menu__burger::after {
+    left: 0;
+    position: absolute;
+    height: 15%;
+    width: 100%;
+    -webkit-transition: all .3s ease 0s;
+    transition: all .3s ease 0s;
+    background-color: #000;
+  }
+  .menu__burger::before, .menu__burger::after {
+    content: "";
+  }
+  .menu__burger::before {
+    top: 0;
+  }
+  .menu__burger::after {
+    bottom: 0;
+  }
+  .menu__burger span {
+    top: 50%;
+    -webkit-transform: scale(1) translate(0px, -50%);
+            transform: scale(1) translate(0px, -50%);
+  }
+  .main {
+    margin-top: 100px;
+  }
   .block__container {
     height: 100%;
     -ms-grid-rows: 1fr;
@@ -1050,5 +1150,11 @@ ol, ul, li {
   }
   .block__img {
     width: 50%;
+  }
+  .tree {
+    width: 97%;
+  }
+  .grgrgrparents__container {
+    margin-left: -7%;
   }
 }
